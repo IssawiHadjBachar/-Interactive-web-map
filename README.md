@@ -15,43 +15,66 @@ This web application allows users to interactively visualize weather station dat
 - Fast response with in-memory caching (`cached_data`)
 
 ## 🗂 Folder Structure
+
+```
 project/
 │
 ├── static/
-│ └── js/
-│ └── script.js # Front-end Leaflet + EasyPrint logic
+│   └── js/
+│       └── script.js        # Front-end Leaflet + EasyPrint logic
 ├── templates/
-│ └── index.html # Main HTML page
-├── app.py # Flask backend with data loading
-├── .gitignore # Lists folders like data/ to be ignored by Git
-└── data/ # ❌ Not pushed to GitHub — contains station CSVs per year
+│   └── index.html           # Main HTML page
+├── app.py                   # Flask backend with data loading
+├── requirements.txt         # Required packages
+├── .gitignore               # Lists folders like data/ to be ignored by Git
+└── data/                    # ❌ Not pushed to GitHub — contains station CSVs per year
+```
 
-⚠️ **Note:** The `data/` folder is excluded from Git using `.gitignore`. It must be manually added on your local machine to run the app.
+> ⚠️ **Note:** The `data/` folder is excluded from Git using `.gitignore`. It must be manually added on your local machine to run the app.
 
 ## 📦 Installation
 
-1. **Clone the repo:**
-   git clone https://github.com/IssawiHadjBachar/-Interactive-web-map.git
-   cd -Interactive-web-map
+### 1. Clone the repo
 
-Prepare your data/ directory:
+```bash
+git clone https://github.com/IssawiHadjBachar/-Interactive-web-map.git
+cd -Interactive-web-map
+```
+
+### 2. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Prepare your `data/` directory
 
 Place your structured data in a folder like this:
 
+```
 data/
-  ├── 2000/
-  │    ├── 7021230.csv
-  │    └── ...
-  ├── 2001/
-  └── ...
-Run the app:
+├── 2000/
+│   └── 7021230.csv
+├── 2001/
+│   └── ...
+```
 
+### 4. Run the app
+
+```bash
 python app.py
-Then open your browser at: http://127.0.0.1:5000
+```
 
-🧾 Notes
-The backend parses all .csv files by year and station ID.
-Each variable shows:
-Count of available years
-Grouped year ranges (e.g., 2000–2003, 2005)
-Leaflet EasyPrint allows users to export the map view as an image.
+Then open your browser at: [http://127.0.0.1:5000](http://127.0.0.1:5000)
+
+## 🧾 Notes
+
+- The backend parses all `.csv` files by year and station ID.
+- Each variable shows:
+  - Count of available years
+  - Grouped year ranges (e.g., 2000–2003, 2005)
+- Leaflet EasyPrint allows users to export the map view as an image.
+
+## ⚠️ License
+
+MIT License — Free to use and modify for personal, academic, or non-commercial use.
