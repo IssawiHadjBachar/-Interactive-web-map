@@ -1,0 +1,70 @@
+:root {
+  --primary-color: #191c3f;
+  --accent-color: #3bafda;
+  --background-color: #f5f7fa;
+  --border-color: #dcdcdc;
+  --label-color: #333;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--background-color);
+  padding: 20px;
+}
+
+/* Controls container with filter checkboxes and download button */
+#controls {
+  background: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  border: 1px solid var(--border-color);
+}
+
+/* Checkbox label styling */
+#controls label {
+  cursor: pointer;
+  font-size: 15px;
+  color: var(--label-color);
+}
+
+/* Map container */
+#map {
+  width: 100%;
+  height: 120vh;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-color);
+  position: relative;
+  z-index: 0;
+}
+
+/* Print map button inside #controls */
+#controls button#print-map {
+  padding: 8px 14px;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease;
+  margin-right: 10px;
+}
+
+#controls button#print-map:hover {
+  background-color: #3199c7;
+}
